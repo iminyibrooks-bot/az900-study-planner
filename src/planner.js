@@ -1,5 +1,5 @@
 // planner.js - AZ-900 Study Planner (Unofficial study aid)
-const { TOPICS } = require("./topics.js");
+const TOPIC_DATA = typeof require !== "undefined" ? require("./topics.js").TOPICS : window.TOPICS;
 const MS_PER_DAY = 86400000;
 
 // Turns a "YYYY-MM-DD" string or a Date into a whole-day number
@@ -116,7 +116,7 @@ function validateInputs(examDate, hoursPerDay, weakTopics = [], today = new Date
   if (!Array.isArray(weakTopics)) {
     errors.push({ code: "INVALID_WEAK_TOPICS", message: "Weak topics must be a list of topic IDs." });
   } else if (weakTopics.length > 0) {
-    const topicList = topics || (typeof TOPICS !== "undefined" ? TOPICS : []);
+    const topicList = topics || (typeof TOPIC_DATA !== "undefined" ? TOPIC_DATA : []);
     if (topicList.length === 0) {
       errors.push({ code: "TOPICS_NOT_LOADED", message: "Topic list is not loaded. Check topics.js." });
     } else {
@@ -280,7 +280,7 @@ function findTopicProblems(topics) {
 // Returns { success, plan, errors, warnings }
 // plan = array of sessions: { date, dayNumber, topicId, topic, area, sessionType, tasks, isWeak, totalHours }
 // sessionType: "learning" | "topic-practice" | "cumulative-revision" | "practice-exam" | "final-review"
-function generateStudyPlan(examDate, hoursPerDay, weakTopics, allTopics = TOPICS , today = new Date()) {
+function generateStudyPlan(examDate, hoursPerDay, weakTopics, allTopics = TOPIC_DATA , today = new Date()) {
   const fail = (errors, warnings = []) => ({ success: false, plan: [], errors, warnings });
   const noTopics = { code: "NO_TOPICS", message: "The topic list is empty or missing. Check topics.js." };
 
