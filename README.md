@@ -47,9 +47,11 @@ We used Claude as a coding and planning assistant. All AI-written code was run a
 
 ## Team
 
-- Celestine (Cess) Rapando: planning logic
-- Wangari: page layout and styling
-- Brooky: content and documentation
+- Celestine Rapando: planning logic
+- Wangari Ndegwa: page layout and styling
+- Brooklyn Iminyi: content, documentation and connecting the form to the planner
+- Joyce Ndegwa: pitch deck (with Jeremiah)
+- Jeremiah Koske: pitch deck (with Joyce)
 
 ## What we learned
 
