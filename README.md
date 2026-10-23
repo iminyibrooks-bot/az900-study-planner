@@ -8,6 +8,10 @@ An unofficial study planner for the Microsoft AZ-900 (Azure Fundamentals) exam. 
 
 https://iminyibrooks-bot.github.io/az900-study-planner/
 
+## Presentation
+
+Our project slides on Canva: https://canva.link/dqme2pbkq1hzv7b
+
 ## Features
 
 - Day-by-day plan from today until your exam date
